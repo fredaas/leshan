@@ -88,6 +88,15 @@
                 {{ server.security.securityMode.toLowerCase() }}
               </v-chip>
             </span>
+            <span v-if="server.oscore">
+              with
+              <v-chip small>
+                <v-icon left small>
+                  {{ oscoreIcon() }}
+                </v-icon>
+                OSCORE
+              </v-chip>
+            </span>
             <br />
           </span>
           <!-- LWM2M Bootstrap Server to add -->
@@ -100,6 +109,15 @@
                   {{ modeIcon(server.security.securityMode.toLowerCase()) }}
                 </v-icon>
                 {{ server.security.securityMode.toLowerCase() }}
+              </v-chip>
+            </span>
+            <span v-if="server.oscore">
+              with
+              <v-chip small>
+                <v-icon left small>
+                  {{ oscoreIcon() }}
+                </v-icon>
+                OSCORE
               </v-chip>
             </span>
           </span>
@@ -119,7 +137,10 @@ import { configsFromRestToUI, configFromUIToRest } from "../js/bsconfigutil.js";
 import { fromHex, fromAscii } from "@leshan-server-core-demo/js/byteutils.js";
 import SecurityInfoChip from "@leshan-server-core-demo/components/security/SecurityInfoChip.vue";
 import ClientConfigDialog from "../components/wizard/ClientConfigDialog.vue";
-import { getModeIcon } from "@leshan-server-core-demo/js/securityutils.js";
+import {
+  getModeIcon,
+  getOscoreIcon,
+} from "@leshan-server-core-demo/js/securityutils.js";
 
 export default {
   components: { ClientConfigDialog, SecurityInfoChip },
@@ -182,6 +203,9 @@ export default {
     },
     modeIcon(securitymode) {
       return getModeIcon(securitymode);
+    },
+    oscoreIcon() {
+      return getOscoreIcon();
     },
 
     formatData(c) {
