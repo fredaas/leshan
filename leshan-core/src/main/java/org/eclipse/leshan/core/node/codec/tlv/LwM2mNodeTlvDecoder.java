@@ -52,7 +52,7 @@ public class LwM2mNodeTlvDecoder implements NodeDecoder {
 
     private static final Logger LOG = LoggerFactory.getLogger(LwM2mNodeTlvDecoder.class);
 
-    // parser used for core link parser
+    // parser used for core link data type
     private final LinkParser linkParser;
 
     public LwM2mNodeTlvDecoder() {
