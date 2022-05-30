@@ -39,7 +39,7 @@ import org.slf4j.LoggerFactory;
 public class LwM2mNodeTextDecoder implements NodeDecoder {
     private static final Logger LOG = LoggerFactory.getLogger(LwM2mNodeTextDecoder.class);
 
-    // parser used for core link parser
+    // parser used for core link data type
     private final LinkParser linkParser;
 
     public LwM2mNodeTextDecoder() {
@@ -47,7 +47,7 @@ public class LwM2mNodeTextDecoder implements NodeDecoder {
     }
 
     /**
-     * Create a new LwM2mNodeTextDecoder with a custom link parser.
+     * Create a new LwM2mNodeTextDecoder with a custom {@link org.eclipse.leshan.core.link.Link} parser.
      * 
      * @param linkParser the link parser for core link format resources.
      */

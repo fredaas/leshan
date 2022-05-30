@@ -53,6 +53,17 @@ public class LwM2mNodeTlvEncoder implements NodeEncoder {
 
     private static final Logger LOG = LoggerFactory.getLogger(LwM2mNodeTlvEncoder.class);
 
+    private final LinkSerializer linkSerializer;
+
+    public LwM2mNodeTlvEncoder() {
+        this(new DefaultLinkSerializer());
+    }
+
+    public LwM2mNodeTlvEncoder(LinkSerializer linkSerializer) {
+        this.linkSerializer = linkSerializer;
+    }
+
+
     @Override
     public byte[] encode(LwM2mNode node, LwM2mPath path, LwM2mModel model, LwM2mValueConverter converter)
             throws CodecException {
@@ -68,9 +79,7 @@ public class LwM2mNodeTlvEncoder implements NodeEncoder {
         return internalEncoder.out.toByteArray();
     }
 
-    private static class InternalEncoder implements LwM2mNodeVisitor {
-    
-        private LinkSerializer linkSerializer = new DefaultLinkSerializer();
+    private class InternalEncoder implements LwM2mNodeVisitor {
 
         // visitor inputs
         private LwM2mPath path;

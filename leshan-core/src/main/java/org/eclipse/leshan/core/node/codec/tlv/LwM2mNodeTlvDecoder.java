@@ -79,21 +79,6 @@ public class LwM2mNodeTlvDecoder implements NodeDecoder {
         }
     }
 
-    /**
-     * Get the Link parser used for parsing core links.
-     */
-    public LinkParser getLinkParser() {
-        return linkParser;
-    }
-
-    /**
-     * Set the Link parser used for parsing core links. If not set the
-     * {@link DefaultLwM2mLinkParser} is used.
-     */
-    public void setLinkParser(LinkParser linkParser) {
-        this.linkParser = linkParser;
-    }
-
     @SuppressWarnings("unchecked")
     private <T extends LwM2mNode> T parseTlv(Tlv[] tlvs, LwM2mPath path, LwM2mModel model, Class<T> nodeClass)
             throws CodecException {
