@@ -1,15 +1,15 @@
 /*******************************************************************************
  * Copyright (c) 2015 Sierra Wireless and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * and Eclipse Distribution License v1.0 which accompany this distribution.
- * 
+ *
  * The Eclipse Public License is available at
  *    http://www.eclipse.org/legal/epl-v20.html
  * and the Eclipse Distribution License is available at
  *    http://www.eclipse.org/org/documents/edl-v10.html.
- * 
+ *
  * Contributors:
  *     Sierra Wireless - initial API and implementation
  *******************************************************************************/
@@ -47,8 +47,8 @@ public class LwM2mNodeTextDecoder implements NodeDecoder {
     }
 
     /**
-     * Create a new LwM2mNodeTextDecoder with a custom {@link org.eclipse.leshan.core.link.Link} parser.
-     * 
+     * Create a new LwM2mNodeTextDecoder with a custom {@link LinkParser}
+     *
      * @param linkParser the link parser for core link format resources.
      */
     public LwM2mNodeTextDecoder(LinkParser linkParser) {
